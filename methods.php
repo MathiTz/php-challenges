@@ -34,7 +34,11 @@
 
     echo 'Sua string é ' . $word .' <br><br>';
     echo 'Sua string contem ' . strlen($word) . ' caracteres <br><br>';
-    echo 'String Reversa: ' . strrev(substr($word, 0, 254)) . '<br><br>';
+    if ($word === strrev($word)){
+            echo 'String vazia ';
+            
+    }    else{    echo 'String Reversa: ' . strrev(substr($word, 0, 254)) . '<br><br>';
+    }
     echo 'Sua string reversa contém caracteres ' . strlen(strrev(substr($word, 0, 254)));
     echo '<br><br>';
     echo "Seu fatorial (do número ". $fat .") é igual a: " . calcFat($fat) ."<br><br>";
