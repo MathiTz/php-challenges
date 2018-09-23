@@ -8,13 +8,30 @@
 </head>
 <body>
     <?php
-    $name = $_POST["name"];
-    $age = $_POST["age"];
+    $word = $_POST["word"];
+    $number = $_POST["number"];
 
-    echo 'Sua string é ' . $name .' <br>';
-    echo 'Sua string contem ' . strlen($name) . 'caracteres <br>';
-    echo 'String Reversa; ' . strrev(substr($name, 0, 254)) . '<br>';
-    echo 'Sua string reversa contém' . strlen(strrev(substr($name, 0, 254)));
+    $primos = array();
+    
+    function numeroPrimo($parametro) {
+        if ($parametro%2!=0 && $parametro%3!=0 && $parametro%5!=0 && $parametro%7!=0 && $parametro%11!=0){
+            return 1;
+        }
+    }
+
+    function exibePrimosRecursivamente($numero) {
+        numeroPrimo($numero);
+    }
+
+
+    echo 'Sua string é ' . $word .' <br>';
+    echo 'Sua string contem ' . strlen($word) . ' caracteres <br>';
+    echo 'String Reversa: ' . strrev(substr($word, 0, 254)) . '<br>';
+    echo 'Sua string reversa contém caracteres ' . strlen(strrev(substr($word, 0, 254)));
+    echo '<br><br><br><br>';
+    echo 'Exibindo número primos de 0 até ' . $number;
+
+    exibePrimosRecursivamente($number);
     
     ?>
 </body>
