@@ -11,6 +11,23 @@
     $word = $_POST["word"];
     $number = $_POST["number"];
     $fat = $_POST["fat"];
+    
+    function primoDivisor($number) {
+    
+    for($i = 1; $i <= $number; $i++){
+                $divisores = 0;
+     
+        for($j = $i; $j >= 1; $j--){
+        if (($i % $j) == 0) {
+            $divisores++;
+        }
+    }
+     
+    if ($divisores == 2){
+        echo $i . ', ';
+    }
+}
+    }
 
     function calcFat($fat){
         if ($fat <= 1){
@@ -35,28 +52,16 @@
     echo 'Sua string é ' . $word .' <br><br>';
     echo 'Sua string contem ' . strlen($word) . ' caracteres <br><br>';
     if ($word === strrev($word)){
-            echo 'String vazia ';
+            echo 'String vazia <br>';
             
     }    else{    echo 'String Reversa: ' . strrev(substr($word, 0, 254)) . '<br><br>';
     }
     echo 'Sua string reversa contém caracteres ' . strlen(strrev(substr($word, 0, 254)));
     echo '<br><br>';
     echo "Seu fatorial (do número ". $fat .") é igual a: " . calcFat($fat) ."<br><br>";
-    echo 'Exibindo número primos de 0 até ' . $number ."<br><br>";
+    echo 'Exibindo número primos de 0 até ' . $number ."<br>".primoDivisor($number)."<br>";
     
-    for($i = 1; $i <= $number; $i++){
-                $divisores = 0;
-     
-        for($j = $i; $j >= 1; $j--){
-        if (($i % $j) == 0) {
-            $divisores++;
-        }
-    }
-     
-    if ($divisores == 2){
-        echo $i . ', ';
-    }
-}
+    
     
     ?>
 </body>
