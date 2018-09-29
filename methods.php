@@ -55,8 +55,9 @@
             echo 'String vazia <br>';
             
     }    else{    echo 'String Reversa: ' . strrev(substr($word, 0, 254)) . '<br><br>';
+                  echo 'Sua string reversa contém caracteres ' . strlen(strrev(substr($word, 0, 254)));
     }
-    echo 'Sua string reversa contém caracteres ' . strlen(strrev(substr($word, 0, 254)));
+    
     echo '<br><br>';
     echo "Seu fatorial (do número ". $fat .") é igual a: " . calcFat($fat) ."<br><br>";
     echo 'Exibindo número primos de 0 até ' . $number ."<br>".primoDivisor($number)."<br>";
